@@ -25,3 +25,11 @@
 .card{
   padding: 10px;
 }
+
+.space{
+  padding-top: 30px;
+}
+
+.spacePadding{
+  padding: 7px 0px !important;
+}

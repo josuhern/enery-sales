@@ -1,5 +1,3 @@
-import { faL } from "@fortawesome/free-solid-svg-icons";
-
 export default class Device{
     deviceName: string;
     floorDimension: string;
@@ -8,11 +6,8 @@ export default class Device{
     energy: number;
     price: number;
     releaseDate: number | null;
-    array: any;
-    img: string;
     quantity: number = 0;
     transformer: boolean = false;
-    newValue: number = 0;
     
     constructor(deviceName: string, floorDimension: string, energy: number, price: number, releaseDate?: number){
         this.deviceName = deviceName;
@@ -23,7 +18,6 @@ export default class Device{
         this.price = price;
         this.releaseDate = releaseDate ? releaseDate : null;
         this.transformer = releaseDate ? false : true;
-        this.img = "https://www.tesla.com/tesla_theme/assets/img/powerpack/inside-powerpack-open.png?20161028"
     }
 
 }
