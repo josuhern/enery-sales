@@ -3,7 +3,10 @@ import React from "react";
 import { Badge, Button, InputGroup, ListGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import Utility from "./utilities";
 import Device from "./device";
+
+const utilities = new Utility();
 
 type CartItemProps = {
     idx: number;
@@ -44,7 +47,8 @@ const Item: React.FC<CartItemProps> = ({ idx, device, removeItem, addItem }) => 
     if (device.transformer) {
         return (
             <InputGroup>
-                <InputGroup.Text>{device.deviceName} <span hidden={!device.transformer}>&nbsp;**</span></InputGroup.Text>
+                <InputGroup.Text>{device.deviceName}&nbsp;**</InputGroup.Text>
+                <InputGroup.Text>{utilities.currencyFormat(device.quantity*device.price)}</InputGroup.Text>
             </InputGroup>
         );
     } else {
@@ -52,7 +56,8 @@ const Item: React.FC<CartItemProps> = ({ idx, device, removeItem, addItem }) => 
             <InputGroup>
                 <Button hidden={device.transformer} variant="danger" type="button" disabled={device.quantity <= 0} onClick={e => removeItem(idx)}><FontAwesomeIcon icon={faMinus} /></Button>
                 <Button hidden={device.transformer} variant="success" type="button" onClick={e => addItem(idx)}><FontAwesomeIcon icon={faPlus} /></Button>
-                <InputGroup.Text>{device.deviceName} <span hidden={!device.transformer}> **</span></InputGroup.Text>
+                <InputGroup.Text>{device.deviceName}</InputGroup.Text>
+                <InputGroup.Text>{utilities.currencyFormat(device.quantity*device.price)}</InputGroup.Text>
             </InputGroup>
         );
     }

@@ -127,7 +127,7 @@ const Cart: React.FC<CartProps> = ({ devices }) => {
         <Container >
             <DevicesForm devices={devices} onFromSubmit={addToCartMultiple} />
             <Row className={styles.space}>
-                <Col xs="auto" md="6" lg="4">
+                <Col xs="auto" md="6" lg="6">
                     <h3>Cart <Button variant="outline-danger" type="button" onClick={e => resetCart()}><FontAwesomeIcon icon={faTrash} /></Button></h3>
                     <p><strong>Total:</strong> {utilities.currencyFormat(total)}</p>
                     <p><strong>Energy density:</strong> {energy} MWh</p>
