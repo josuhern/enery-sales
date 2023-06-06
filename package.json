@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "runApp": "npm install && next build && next start -p 8000",
     "dev": "next dev -p 8000",
     "build": "next build",
     "start": "next start -p 8000",
