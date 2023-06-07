@@ -20,7 +20,7 @@ const Dashboard: React.FC = () => {
     return (
         <Container className={styles.space}>
             <Image className={styles.landingImage} alt="background" layout='fill' objectFit='cover' objectPosition='center' src={background}/>
-            <Image className={styles.landingItems} alt="logo" width={100} height={100} src={logo}/>
+            <Image className={styles.logo} alt="logo" width={100} height={100} src={logo}/>
             <Cart devices={devices}></Cart>
         </Container>
     );
