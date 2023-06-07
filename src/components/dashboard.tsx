@@ -13,10 +13,10 @@ const devices: Device[] = [
     new Device("Transformer", "10ft x 10ft", -0.25, 10000)
 ];
 
-const Dashboard : React.FC=()=>{
+const Dashboard: React.FC = () => {
     return (
         <Container className={styles.space}>
-            <h1>Energy Sales</h1><br/>
+            <h1>Energy Sales</h1><br />
             <Cart devices={devices}></Cart>
         </Container>
     );

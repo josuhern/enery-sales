@@ -3,7 +3,7 @@
 
 This is a [Next.js](https://nextjs.org/) React Typescript project 
 
-## Commands for development server:
+## Command to run the application:
 
 ```bash
 yarn runApp
@@ -11,6 +11,29 @@ yarn runApp
 npm run runApp
 ```
 After couple of minutes you will find the application running [here](http://localhost:8000).
+
+## Commands for testing:
+This application is using [Cypress](https://www.cypress.io/) for testing e2e and component
+
+1. In order to be able to test you need the application runing in a separate console
+```bash
+yarn dev
+# or
+npm run dev
+```
+2. run the following command in a separate console to test end to end
+```bash
+yarn test
+# or
+npm run test
+```
+
+3. run the following command in a separate console to test components
+```bash
+yarn testComponents
+# or
+npm run testComponents
+```
 
 ## Requirements
 

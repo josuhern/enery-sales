@@ -54,8 +54,8 @@ const Item: React.FC<CartItemProps> = ({ idx, device, removeItem, addItem }) => 
     } else {
         return (
             <InputGroup>
-                <Button hidden={device.transformer} variant="danger" type="button" disabled={device.quantity <= 0} onClick={e => removeItem(idx)}><FontAwesomeIcon icon={faMinus} /></Button>
-                <Button hidden={device.transformer} variant="success" type="button" onClick={e => addItem(idx)}><FontAwesomeIcon icon={faPlus} /></Button>
+                <Button id={"remove-"+idx} variant="danger" type="button" disabled={device.quantity <= 0} onClick={e => removeItem(idx)}><FontAwesomeIcon icon={faMinus} /></Button>
+                <Button id={"add-"+idx} variant="success" type="button" onClick={e => addItem(idx)}><FontAwesomeIcon icon={faPlus} /></Button>
                 <InputGroup.Text>{device.deviceName}</InputGroup.Text>
                 <InputGroup.Text>{utilities.currencyFormat(device.quantity*device.price)}</InputGroup.Text>
             </InputGroup>

@@ -129,7 +129,7 @@ const Cart: React.FC<CartProps> = ({ devices }) => {
             <Row className={styles.space}>
                 <Col xs="auto" md="6" lg="6">
                     <h3>Cart <Button variant="outline-danger" type="button" onClick={e => resetCart()}><FontAwesomeIcon icon={faTrash} /></Button></h3>
-                    <p><strong>Total:</strong> {utilities.currencyFormat(total)}</p>
+                    <p id="total"><strong>Total:</strong> {utilities.currencyFormat(total)}</p>
                     <p><strong>Energy density:</strong> {energy} MWh</p>
                     <p><strong>Land dimension required:</strong> {getDimensions()[0]}ft x {getDimensions()[1]}ft</p>
                     <CartItems devices={devices} removeItem={removeFromCart} addItem={addToCart} />

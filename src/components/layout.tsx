@@ -17,12 +17,12 @@ class Layout extends Component<LayoutProps>{
                 <h3>Layout</h3>
                 <div className={styles.land}>
                     {this.props.cart.map((d: Device, idX) => (
-                        <div key={idX} className={styles.square} style={{ height: d.height * this.ratio, width: d.width * this.ratio }}>
+                        <div key={d.deviceName+"-"+idX} data-test-id={"device-"+idX} className={styles.square} style={{ height: d.height * this.ratio, width: d.width * this.ratio }}>
                             <p>{d.deviceName}</p>
                         </div>
                     ))}
                     {this.props.transfor.map((d: Device, idX) => (
-                        <div key={idX} className={styles.square} style={{ height: d.height * this.ratio, width: d.width * this.ratio }}>
+                        <div key={d.deviceName+"-"+idX} data-test-id={"transforme-"+idX} className={styles.square} style={{ height: d.height * this.ratio, width: d.width * this.ratio }}>
                             <p>{d.deviceName}</p>
                         </div>
                     ))}
