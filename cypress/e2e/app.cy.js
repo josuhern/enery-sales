@@ -1,7 +1,7 @@
 beforeEach(() => {
    cy.visit('http://localhost:8000/')
 })
-describe('Dashboar', () => {
+describe('Dashboard', () => {
     it('should render the site', () => {
       cy.get('div').should('have.class', 'container');
     });
