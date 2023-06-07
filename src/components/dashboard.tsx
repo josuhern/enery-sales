@@ -4,6 +4,9 @@ import styles from '../app/page.module.css'
 import React from "react";
 import Device from "./device";
 import Cart from "./cart";
+import Image from 'next/image';
+import logo from '../img/teslaLogo.png'
+import background from '../img/teslaBackground.avif'
 
 const devices: Device[] = [
     new Device("Megapack 2XL", "40ft x 10ft", 4, 120000, 2022),
@@ -16,7 +19,8 @@ const devices: Device[] = [
 const Dashboard: React.FC = () => {
     return (
         <Container className={styles.space}>
-            <h1>Energy Sales</h1><br />
+            <Image className={styles.landingImage} alt="background" layout='fill' objectFit='cover' objectPosition='center' src={background}/>
+            <Image className={styles.landingItems} alt="logo" width={100} height={100} src={logo}/>
             <Cart devices={devices}></Cart>
         </Container>
     );

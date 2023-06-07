@@ -43,14 +43,14 @@ const DevicesForm: React.FC<DevicesFormProps> = ({ devices, onFromSubmit }) => {
                                     <div className={styles.square} style={{ height: d.height * packRatio, width: d.width * packRatio }}>
                                         <p>{d.height}ft x {d.width}ft</p>
                                     </div><br></br>
-                                    <p><strong>{d.deviceName}</strong> <Badge bg="primary">{d.quantity}</Badge></p>
+                                    <p><strong>{d.deviceName}</strong> <Badge bg="danger">{d.quantity}</Badge></p>
                                     <p><strong>{d.energy} MWh</strong></p>
                                     <p><strong>{utilities.currencyFormat(d.price)}</strong></p>
 
                                     <Form id={"form-"+idx}>
                                         <InputGroup className="mb-3">
                                             <Form.Control placeholder="Add to cart" aria-label="Add to cart" name={'newValue-'+idx} type="number" value={inputForm[idx]} onChange={e => handleFormChage(idx, e)} />
-                                            <Button variant="outline-primary" type="button" name={'submit-'+idx} onClick={submit}>
+                                            <Button variant="outline-danger" type="button" name={'submit-'+idx} onClick={submit}>
                                                 <FontAwesomeIcon icon={faCartPlus} />
                                             </Button>
                                         </InputGroup>

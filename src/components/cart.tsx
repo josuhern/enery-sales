@@ -124,7 +124,8 @@ const Cart: React.FC<CartProps> = ({ devices }) => {
     }
 
     return (
-        <Container >
+        <Container className={styles.landingContainer} >
+            <center><h1 className={styles.landingItems}>Energy Sales</h1><br /></center>
             <DevicesForm devices={devices} onFromSubmit={addToCartMultiple} />
             <Row className={styles.space}>
                 <Col xs="auto" md="6" lg="6">
@@ -134,7 +135,7 @@ const Cart: React.FC<CartProps> = ({ devices }) => {
                     <p><strong>Land dimension required:</strong> {getDimensions()[0]}ft x {getDimensions()[1]}ft</p>
                     <CartItems devices={devices} removeItem={removeFromCart} addItem={addToCart} />
                 </Col>
-                <Col xs="auto" md="auto" lg="auto">
+                <Col xs="auto" md="6" lg="6">
                     <Layout packRatio={packRatio} cart={cart} transfor={transfor}></Layout>
                 </Col>
             </Row>

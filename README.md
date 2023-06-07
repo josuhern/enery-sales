@@ -5,12 +5,15 @@ This is a [Next.js](https://nextjs.org/) React Typescript project
 
 ## Command to run the application:
 
+By running this command all dependencies will be installed, the code will be build and the application will be started.
+
+After couple of minutes you will find the application running [here](http://localhost:8000).
+
 ```bash
 yarn runApp
 # or
 npm run runApp
 ```
-After couple of minutes you will find the application running [here](http://localhost:8000).
 
 ## Commands for testing:
 This application is using [Cypress](https://www.cypress.io/) for testing e2e and component

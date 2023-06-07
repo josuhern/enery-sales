@@ -31,7 +31,7 @@ const CartItems: React.FC<CartItemsProps> = ({ devices, removeItem, addItem }) =
                             <div className="ms-6">
                                 <Item idx={idx} device={d} removeItem={removeItem} addItem={addItem}></Item>
                             </div>
-                            <Badge bg="primary" pill>{d.quantity}</Badge>
+                            <Badge bg="danger" pill>{d.quantity}</Badge>
                         </ListGroup.Item>
                     )
                 })}
@@ -54,8 +54,8 @@ const Item: React.FC<CartItemProps> = ({ idx, device, removeItem, addItem }) => 
     } else {
         return (
             <InputGroup>
-                <Button id={"remove-"+idx} variant="danger" type="button" disabled={device.quantity <= 0} onClick={e => removeItem(idx)}><FontAwesomeIcon icon={faMinus} /></Button>
-                <Button id={"add-"+idx} variant="success" type="button" onClick={e => addItem(idx)}><FontAwesomeIcon icon={faPlus} /></Button>
+                <Button id={"remove-"+idx} variant="outline-danger" type="button" disabled={device.quantity <= 0} onClick={e => removeItem(idx)}><FontAwesomeIcon icon={faMinus} /></Button>
+                <Button id={"add-"+idx} variant="outline-danger" type="button" onClick={e => addItem(idx)}><FontAwesomeIcon icon={faPlus} /></Button>
                 <InputGroup.Text>{device.deviceName}</InputGroup.Text>
                 <InputGroup.Text>{utilities.currencyFormat(device.quantity*device.price)}</InputGroup.Text>
             </InputGroup>
