@@ -8,18 +8,39 @@ import Device from "./device";
 
 const utilities = new Utility();
 
+/**
+ * Data type for props CartItem
+ * @param idx the index for this given battery
+ * @param device information of device
+ * @param removeItem Interface function that handles removing one battery
+ * @param addItem Interface function that handles adding one battery
+ */
 type CartItemProps = {
     idx: number;
     device: Device;
     removeItem(index: number): void;
     addItem(index: number): void;
 }
+
+/**
+ * Data type for props CartItem
+ * @param devices catalog of batteries
+ * @param removeItem Interface function that handles removing one battery
+ * @param addItem Interface function that handles adding one battery
+ */
 type CartItemsProps = {
     devices: Device[];
     removeItem(index: number): void;
     addItem(index: number): void;
 };
 
+/**
+ * React function component that gets a the calaog of bateries list the deatils of total for each kind
+ * @param devices list of batteries
+ * @param removeItem interface function that handles removing
+ * @param addItem interface function that handles adding 
+ * @returns 
+ */
 const CartItems: React.FC<CartItemsProps> = ({ devices, removeItem, addItem }) => {
     return (
         <div>
@@ -43,8 +64,16 @@ const CartItems: React.FC<CartItemsProps> = ({ devices, removeItem, addItem }) =
     );
 }
 
+/**
+ * React function component that render a battery with the given props
+ * @param idx index of the battery
+ * @param device information of the battery
+ * @param removeItem interaface funciton to remove item
+ * @param addItem interface function to add item
+ * @returns A list item that allows to add and remove itself and detail information about how many of those batteries are in the cart
+ */
 const Item: React.FC<CartItemProps> = ({ idx, device, removeItem, addItem }) => {
-    if (device.transformer) {
+    if (device.transformer) { //if Transformer the limited options are render
         return (
             <InputGroup>
                 <InputGroup.Text>{device.deviceName}&nbsp;**</InputGroup.Text>

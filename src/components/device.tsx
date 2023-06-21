@@ -1,3 +1,16 @@
+/**
+ * Class definition of a Device (Battery)
+ * @param deviceName device name to display
+ * @param floorDimension input param that defines the messurement of the batter comming on string format "40ft x 10ft"
+ * @param width gets populated after parsing the floor dimension and it is being used for scale ratio
+ * @param height gets populated after parsing the floor dimension and it is being used for scale ratio
+ * @param energy shows the energy density of the battery
+ * @param price shows the price of the battery
+ * @param releaseDate release date of the battery
+ * @param quantity used in the cart to keep track of the quantity of batteries to purchase
+ * @param transformer if there is no release date, then it is a transformer, used to diferenciate a transformer
+ */
+
 export default class Device{
     deviceName: string;
     floorDimension: string;

@@ -3,6 +3,11 @@ import React, { Component } from "react";
 import styles from '../app/page.module.css'
 import Device from "./device";
 
+/**
+ * Layout component renders the blocks that represent the batteries
+ * this function uses a ratio to draw the devices at scale
+ */
+
 type LayoutProps = {
     cart: Device[];
     transfor: Device[];
